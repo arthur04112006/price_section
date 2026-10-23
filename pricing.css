@@ -1,0 +1,635 @@
+/*
+ * Kopla — Seção de planos
+ * Tudo fica dentro de .kp-pricing para não vazar no resto do site.
+ * Fontes: usa --font-sora / --font-manrope (next/font) quando existirem.
+ */
+.kp-pricing {
+  --kp-navy: #001960;
+  --kp-navy-deep: #000b29;
+  --kp-violet: #7d67ff;
+  --kp-violet-soft: #e5e0ff;
+  --kp-violet-line: #cfc9ff;
+  --kp-surface: #f5f7ff;
+  --kp-text: #0c0a09;
+  --kp-text-muted: #374775;
+  --kp-text-subtle: #68728f;
+  --kp-border: #dfe4f0;
+  --kp-success: #006d5b;
+  --kp-font-display: var(--font-sora, "Sora"), sans-serif;
+  --kp-font-body: var(--font-manrope, "Manrope"), sans-serif;
+
+  background: var(--kp-surface);
+  color: var(--kp-text);
+  font-family: var(--kp-font-body);
+  padding: clamp(4rem, 7vw, 7rem) 0;
+  scroll-margin-top: 6rem;
+}
+
+.kp-pricing *,
+.kp-pricing *::before,
+.kp-pricing *::after { box-sizing: border-box; }
+
+.kp-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.kp-pricing__inner {
+  width: min(100% - 6rem, 88rem);
+  margin: auto;
+}
+
+/* ---------- Cabeçalho ---------- */
+.kp-pricing__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 3rem;
+  margin-bottom: 3.5rem;
+}
+
+.kp-pricing__intro { max-width: 43rem; }
+
+.kp-pricing__overline {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 0 2rem;
+  color: var(--kp-navy);
+  font-size: .65rem;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+}
+
+.kp-pricing__overline::before {
+  content: "";
+  flex: none;
+  width: 2.6rem;
+  height: 2px;
+  background: var(--kp-violet);
+}
+
+.kp-pricing h2 {
+  margin: 0;
+  font: 600 clamp(2.3rem, 3.5vw, 3.8rem)/1.14 var(--kp-font-display);
+  letter-spacing: -.055em;
+  color: var(--kp-text);
+}
+
+.kp-pricing h2 span { color: var(--kp-violet); }
+
+.kp-pricing__lead {
+  max-width: 46ch;
+  margin: 1.75rem 0 0;
+  color: var(--kp-text-muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+/* ---------- Seletor de cobrança ---------- */
+.kp-billing {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: .75rem;
+}
+
+.kp-billing__toggle {
+  display: inline-flex;
+  padding: .3rem;
+  background: #fff;
+  border: 1px solid var(--kp-violet-line);
+  border-radius: .9rem;
+}
+
+.kp-billing__option {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  min-height: 2.75rem;
+  padding: .55rem 1.1rem;
+  border: 0;
+  border-radius: .65rem;
+  background: transparent;
+  color: var(--kp-text-muted);
+  font: 600 .9rem var(--kp-font-body);
+  cursor: pointer;
+  transition: background .16s, color .16s;
+}
+
+.kp-billing__option:hover { color: var(--kp-navy); }
+
+.kp-billing__option[aria-pressed="true"] {
+  background: var(--kp-navy);
+  color: #f5f7ff;
+}
+
+.kp-billing__badge {
+  padding: .15rem .45rem;
+  border-radius: .35rem;
+  background: var(--kp-violet-soft);
+  color: var(--kp-navy);
+  font-size: .72rem;
+  font-weight: 700;
+}
+
+.kp-billing__option[aria-pressed="true"] .kp-billing__badge {
+  background: var(--kp-violet);
+  color: #fff;
+}
+
+.kp-billing__note {
+  margin: 0;
+  color: var(--kp-text-subtle);
+  font-size: .8rem;
+}
+
+/* ---------- Cards ---------- */
+.kp-plans {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.kp-plan {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1.75rem 1.5rem;
+  background: #fff;
+  border: 1px solid var(--kp-border);
+  border-radius: 1.2rem;
+}
+
+.kp-plan--featured {
+  background: var(--kp-navy-deep);
+  border-color: var(--kp-violet);
+  color: #f5f7ff;
+  box-shadow: 0 1.5rem 3rem -1.5rem rgba(0, 25, 96, .55);
+}
+
+.kp-plan__tag {
+  position: absolute;
+  top: -.8rem;
+  left: 1.5rem;
+  padding: .3rem .7rem;
+  border-radius: .45rem;
+  background: var(--kp-violet);
+  color: #fff;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.kp-plan__name {
+  margin: 0;
+  font: 600 1.35rem/1.2 var(--kp-font-display);
+  letter-spacing: -.04em;
+}
+
+.kp-plan__desc {
+  min-height: 3.1em;
+  margin: .6rem 0 1.5rem;
+  color: var(--kp-text-muted);
+  font-size: .9rem;
+  line-height: 1.55;
+}
+
+.kp-plan--featured .kp-plan__desc { color: var(--kp-violet-soft); }
+
+.kp-plan__price {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: .3rem;
+  min-height: 3.2rem;
+  margin: 0;
+}
+
+.kp-plan__currency {
+  font-size: .95rem;
+  font-weight: 600;
+}
+
+.kp-plan__amount {
+  font: 600 2.6rem/1 var(--kp-font-display);
+  letter-spacing: -.05em;
+}
+
+.kp-plan__amount--text { font-size: 1.9rem; }
+
+.kp-plan__period {
+  color: var(--kp-text-subtle);
+  font-size: .85rem;
+}
+
+.kp-plan--featured .kp-plan__period { color: #c5bdff; }
+
+.kp-plan__billed {
+  min-height: 1.4rem;
+  margin: .5rem 0 1.5rem;
+  color: var(--kp-text-subtle);
+  font-size: .8rem;
+}
+
+.kp-plan__billed strong { color: var(--kp-success); font-weight: 700; }
+
+.kp-plan--featured .kp-plan__billed { color: #c5bdff; }
+.kp-plan--featured .kp-plan__billed strong { color: #a99cff; }
+
+.kp-plan__cta {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 3.25rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--kp-navy);
+  border-radius: .7rem;
+  background: transparent;
+  color: var(--kp-navy);
+  font-size: .95rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background .16s, color .16s, border-color .16s;
+}
+
+.kp-plan__cta:hover { background: var(--kp-violet-soft); }
+
+.kp-plan__cta--primary {
+  background: var(--kp-navy);
+  color: #f5f7ff;
+}
+
+.kp-plan__cta--primary:hover { background: var(--kp-navy-deep); }
+
+.kp-plan--featured .kp-plan__cta {
+  background: var(--kp-violet);
+  border-color: var(--kp-violet);
+  color: #fff;
+}
+
+.kp-plan--featured .kp-plan__cta:hover { background: #8f7dff; border-color: #8f7dff; }
+
+.kp-plan__cta:focus-visible,
+.kp-billing__option:focus-visible,
+.kp-compare__toggle:focus-visible,
+.kp-faq summary:focus-visible {
+  outline: 2px solid var(--kp-violet);
+  outline-offset: 3px;
+}
+
+.kp-plan__features {
+  margin: 1.75rem 0 0;
+  padding: 1.5rem 0 0;
+  border-top: 1px solid var(--kp-border);
+  list-style: none;
+}
+
+.kp-plan--featured .kp-plan__features { border-color: rgba(125, 103, 255, .4); }
+
+.kp-plan__features li.kp-plan__features-title {
+  display: block;
+  margin: 0 0 1rem;
+  font-size: .8rem;
+  font-weight: 700;
+}
+
+.kp-plan__features li.kp-plan__features-title::before { content: none; }
+
+.kp-plan__features li {
+  display: grid;
+  grid-template-columns: 1.15rem 1fr;
+  gap: .65rem;
+  margin-bottom: .8rem;
+  font-size: .88rem;
+  line-height: 1.5;
+}
+
+.kp-plan__features li::before {
+  content: "";
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-top: .1rem;
+  border-radius: .35rem;
+  background: var(--kp-violet-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23001960' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/.7rem no-repeat;
+}
+
+.kp-plan--featured .kp-plan__features li::before {
+  background-color: var(--kp-violet);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");
+}
+
+/* ---------- Faixa de garantias ---------- */
+.kp-assurances {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .6rem;
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.kp-assurances li {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  padding: .6rem .9rem;
+  border: 1px solid var(--kp-violet-line);
+  border-radius: .8rem;
+  background: #fff;
+  color: var(--kp-text-muted);
+  font-size: .8rem;
+}
+
+.kp-assurances svg { flex: none; color: var(--kp-violet); }
+
+/* ---------- Comparativo ---------- */
+.kp-compare { margin-top: 4.5rem; }
+
+.kp-compare__toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 1.5rem 0;
+  border: 0;
+  border-top: 1px solid var(--kp-navy);
+  background: none;
+  color: var(--kp-text);
+  font: 500 clamp(1.3rem, 2.3vw, 2rem)/1.4 var(--kp-font-display);
+  letter-spacing: -.04em;
+  text-align: left;
+  cursor: pointer;
+}
+
+.kp-compare__icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: .7rem;
+  background: var(--kp-violet-soft);
+  color: var(--kp-navy);
+  transition: transform .2s;
+}
+
+.kp-compare__toggle[aria-expanded="true"] .kp-compare__icon { transform: rotate(45deg); }
+
+.kp-compare__panel[hidden] { display: none; }
+
+.kp-compare__scroll {
+  overflow-x: auto;
+  border: 1px solid var(--kp-border);
+  border-radius: 1.2rem;
+  background: #fff;
+}
+
+.kp-compare table {
+  width: 100%;
+  min-width: 46rem;
+  border-collapse: collapse;
+  font-size: .88rem;
+}
+
+.kp-compare th,
+.kp-compare td {
+  padding: .9rem 1.25rem;
+  border-bottom: 1px solid var(--kp-border);
+  text-align: center;
+  vertical-align: middle;
+}
+
+.kp-compare thead th {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  font: 600 1rem var(--kp-font-display);
+  letter-spacing: -.03em;
+}
+
+.kp-compare thead th.is-featured { color: var(--kp-violet); }
+
+.kp-compare th[scope="row"] {
+  width: 34%;
+  color: var(--kp-text-muted);
+  font-weight: 500;
+  text-align: left;
+}
+
+.kp-compare td.is-featured { background: rgba(229, 224, 255, .35); }
+
+.kp-compare .kp-compare__group th {
+  padding-top: 1.5rem;
+  background: var(--kp-surface);
+  color: var(--kp-navy);
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.kp-compare tbody tr:last-child th,
+.kp-compare tbody tr:last-child td { border-bottom: 0; }
+
+.kp-yes,
+.kp-no {
+  display: inline-grid;
+  place-items: center;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: .4rem;
+}
+
+.kp-yes { background: var(--kp-violet-soft); color: var(--kp-navy); }
+.kp-no { color: #a6a09b; }
+
+/* ---------- Adicionais ---------- */
+.kp-addons {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 3rem;
+  margin-top: 4.5rem;
+  padding: clamp(2rem, 4vw, 3rem);
+  border-radius: 1.2rem;
+  background: var(--kp-navy-deep);
+  color: #f5f7ff;
+}
+
+.kp-addons__title {
+  margin: 0;
+  font: 600 clamp(1.6rem, 2.4vw, 2.2rem)/1.2 var(--kp-font-display);
+  letter-spacing: -.05em;
+}
+
+.kp-addons__lead {
+  margin: 1rem 0 0;
+  color: var(--kp-violet-soft);
+  font-size: .95rem;
+  line-height: 1.7;
+}
+
+.kp-addons__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.kp-addons__list li {
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+  padding: 1.1rem 1.2rem;
+  border: 1px solid rgba(125, 103, 255, .7);
+  border-radius: .8rem;
+}
+
+.kp-addons__list strong { font-size: .95rem; }
+
+.kp-addons__list span {
+  color: #c5bdff;
+  font-size: .82rem;
+  line-height: 1.5;
+}
+
+/* ---------- FAQ ---------- */
+.kp-faq {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 3rem;
+  margin-top: 4.5rem;
+}
+
+.kp-faq__title {
+  margin: 0;
+  font: 600 clamp(1.6rem, 2.4vw, 2.2rem)/1.2 var(--kp-font-display);
+  letter-spacing: -.05em;
+}
+
+.kp-faq__list { border-top: 1px solid var(--kp-navy); }
+
+.kp-faq details { border-bottom: 1px solid var(--kp-border); }
+
+.kp-faq summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  list-style: none;
+  cursor: pointer;
+}
+
+.kp-faq summary::-webkit-details-marker { display: none; }
+
+.kp-faq summary::after {
+  content: "+";
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: .5rem;
+  background: var(--kp-violet-soft);
+  color: var(--kp-navy);
+  font-size: 1.1rem;
+  transition: transform .2s;
+}
+
+.kp-faq details[open] summary::after { transform: rotate(45deg); }
+
+.kp-faq details p {
+  max-width: 60ch;
+  margin: 0;
+  padding: 0 0 1.4rem;
+  color: var(--kp-text-muted);
+  font-size: .95rem;
+  line-height: 1.75;
+}
+
+/* ---------- CTA final ---------- */
+.kp-pricing__cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 4.5rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--kp-navy);
+}
+
+.kp-pricing__cta p {
+  margin: 0;
+  font: 500 clamp(1.3rem, 2.3vw, 2rem)/1.4 var(--kp-font-display);
+  letter-spacing: -.04em;
+}
+
+.kp-pricing__cta-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .4rem;
+}
+
+.kp-pricing__cta-actions .kp-plan__cta { padding: 1rem 1.5rem; }
+
+.kp-pricing__link {
+  min-height: 44px;
+  padding: .5rem;
+  color: var(--kp-navy);
+  font-size: .875rem;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.kp-pricing__link:hover { background: var(--kp-violet-soft); }
+
+/* ---------- Responsivo (mesmos breakpoints do site) ---------- */
+@media (max-width: 1279px) {
+  .kp-plans { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 1rem; }
+  .kp-plan__desc { min-height: 0; }
+}
+
+@media (max-width: 1100px) {
+  .kp-pricing__inner { width: calc(100% - 4rem); }
+  .kp-pricing__header { flex-direction: column; align-items: start; gap: 2rem; }
+  .kp-billing { align-items: start; }
+  .kp-addons,
+  .kp-faq { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+@media (max-width: 767px) {
+  .kp-pricing { padding: 3.5rem 0; }
+  .kp-pricing__inner { width: calc(100% - 2.5rem); }
+  .kp-pricing h2 { font-size: clamp(2rem, 7.5vw, 2.8rem); }
+  .kp-pricing__header { margin-bottom: 2.5rem; }
+  .kp-billing__option { padding: .55rem .8rem; }
+  .kp-plans { grid-template-columns: 1fr; gap: 1.5rem; }
+  .kp-addons__list { grid-template-columns: 1fr; }
+  .kp-pricing__cta { flex-direction: column; align-items: start; gap: 1.5rem; margin-top: 3rem; padding-top: 2.5rem; }
+  .kp-pricing__cta-actions { align-items: start; }
+  .kp-compare,
+  .kp-addons,
+  .kp-faq { margin-top: 3rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kp-pricing * { transition: none !important; }
+}

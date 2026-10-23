@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Planos Kopla</title>
+  <!-- Só para a prévia: no site, Sora e Manrope já vêm do next/font (--font-sora / --font-manrope). -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="pricing.css">
+  <style>
+    html { -webkit-text-size-adjust: 100%; }
+    body { margin: 0; background: #f2f0ff; }
+  </style>
+</head>
+<body>
+
+<!-- ============ INÍCIO DA SEÇÃO DE PLANOS ============ -->
+<section id="planos" class="kp-pricing" aria-labelledby="kp-pricing-title">
+  <div class="kp-pricing__inner">
+
+    <header class="kp-pricing__header">
+      <div class="kp-pricing__intro">
+        <p class="kp-pricing__overline">Planos e preços</p>
+        <h2 id="kp-pricing-title">Um plano para cada etapa da sua <span>operação.</span></h2>
+        <p class="kp-pricing__lead">Comece organizando o atendimento e avance para CRM, painéis e processos conforme a equipe cresce. Sem taxa escondida e com troca de plano quando precisar.</p>
+      </div>
+
+      <div class="kp-billing">
+        <div class="kp-billing__toggle" role="group" aria-label="Ciclo de cobrança">
+          <button type="button" class="kp-billing__option" data-billing="monthly" aria-pressed="false">Mensal</button>
+          <button type="button" class="kp-billing__option" data-billing="annual" aria-pressed="true">Anual <span class="kp-billing__badge">-20%</span></button>
+        </div>
+        <p class="kp-billing__note">Valores por mês, para empresas (CNPJ).</p>
+      </div>
+    </header>
+
+    <!-- Para editar preços: altere data-monthly e data-annual (valor mensal equivalente no plano anual). -->
+    <ul class="kp-plans">
+      <li class="kp-plan" data-monthly="197" data-annual="157.6">
+        <h3 class="kp-plan__name">Essencial</h3>
+        <p class="kp-plan__desc">Para reunir os canais e organizar o atendimento em um só lugar.</p>
+        <p class="kp-plan__price">
+          <span class="kp-plan__currency">R$</span>
+          <span class="kp-plan__amount">157,60</span>
+          <span class="kp-plan__period">/mês</span>
+        </p>
+        <p class="kp-plan__billed" aria-live="polite"></p>
+        <a class="kp-plan__cta" href="https://wa.me/554420181420?text=Ol%C3%A1!%20Quero%20conhecer%20o%20plano%20Essencial%20da%20Kopla." target="_blank" rel="noopener">Começar com o Essencial</a>
+        <ul class="kp-plan__features">
+          <li class="kp-plan__features-title">O que está incluso:</li>
+          <li>WhatsApp, Instagram, Facebook e e-mail centralizados</li>
+          <li>Até 3 usuários</li>
+          <li>Histórico completo de cada contato</li>
+          <li>CRM com funil de vendas</li>
+          <li>Tarefas e próximas ações</li>
+        </ul>
+      </li>
+
+      <li class="kp-plan kp-plan--featured" data-monthly="397" data-annual="317.6">
+        <span class="kp-plan__tag">Mais escolhido</span>
+        <h3 class="kp-plan__name">Profissional</h3>
+        <p class="kp-plan__desc">Para equipes comerciais que precisam de etapas e responsáveis claros.</p>
+        <p class="kp-plan__price">
+          <span class="kp-plan__currency">R$</span>
+          <span class="kp-plan__amount">317,60</span>
+          <span class="kp-plan__period">/mês</span>
+        </p>
+        <p class="kp-plan__billed" aria-live="polite"></p>
+        <a class="kp-plan__cta" href="https://wa.me/554420181420?text=Ol%C3%A1!%20Quero%20conhecer%20o%20plano%20Profissional%20da%20Kopla." target="_blank" rel="noopener">Quero o Profissional</a>
+        <ul class="kp-plan__features">
+          <li class="kp-plan__features-title">Tudo do Essencial, mais:</li>
+          <li>Até 10 usuários</li>
+          <li>Múltiplos funis com etapas personalizadas</li>
+          <li>Distribuição de contatos por responsável</li>
+          <li>Painéis de atendimento e vendas</li>
+          <li>Respostas rápidas e etiquetas</li>
+        </ul>
+      </li>
+
+      <li class="kp-plan" data-monthly="697" data-annual="557.6">
+        <h3 class="kp-plan__name">Gestão</h3>
+        <p class="kp-plan__desc">Para gestores que acompanham a operação e decidem com dados.</p>
+        <p class="kp-plan__price">
+          <span class="kp-plan__currency">R$</span>
+          <span class="kp-plan__amount">557,60</span>
+          <span class="kp-plan__period">/mês</span>
+        </p>
+        <p class="kp-plan__billed" aria-live="polite"></p>
+        <a class="kp-plan__cta" href="https://wa.me/554420181420?text=Ol%C3%A1!%20Quero%20conhecer%20o%20plano%20Gest%C3%A3o%20da%20Kopla." target="_blank" rel="noopener">Começar com o Gestão</a>
+        <ul class="kp-plan__features">
+          <li class="kp-plan__features-title">Tudo do Profissional, mais:</li>
+          <li>Até 25 usuários</li>
+          <li>Painéis de gestão e resultados por período</li>
+          <li>Tempo de resposta e pendências por equipe</li>
+          <li>Automações de fluxo</li>
+          <li>Integrações via API</li>
+        </ul>
+      </li>
+
+      <li class="kp-plan">
+        <h3 class="kp-plan__name">Enterprise</h3>
+        <p class="kp-plan__desc">Para operações com vários setores e processos sob medida.</p>
+        <p class="kp-plan__price">
+          <span class="kp-plan__amount kp-plan__amount--text">Sob consulta</span>
+        </p>
+        <p class="kp-plan__billed">Proposta de acordo com a operação</p>
+        <a class="kp-plan__cta kp-plan__cta--primary" href="https://wa.me/554420181420?text=Ol%C3%A1!%20Quero%20falar%20sobre%20o%20plano%20Enterprise%20da%20Kopla." target="_blank" rel="noopener">Falar com um especialista</a>
+        <ul class="kp-plan__features">
+          <li class="kp-plan__features-title">Tudo do Gestão, mais:</li>
+          <li>Usuários sob medida</li>
+          <li>Mapeamento e implementação de processos</li>
+          <li>Integração entre setores</li>
+          <li>Gerente de conta dedicado</li>
+          <li>Suporte prioritário com SLA</li>
+        </ul>
+      </li>
+    </ul>
+
+    <ul class="kp-assurances">
+      <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Sem fidelidade no plano mensal</li>
+      <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Implantação acompanhada pela equipe Kopla</li>
+      <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Troque de plano quando quiser</li>
+      <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Suporte em português</li>
+    </ul>
+
+    <!-- Comparativo -->
+    <div class="kp-compare">
+      <button type="button" class="kp-compare__toggle" aria-expanded="false" aria-controls="kp-compare-panel">
+        Compare todos os recursos dos planos
+        <span class="kp-compare__icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+      </button>
+      <div class="kp-compare__panel" id="kp-compare-panel" hidden>
+        <div class="kp-compare__scroll">
+          <table>
+            <caption class="kp-sr-only">Comparativo de recursos por plano</caption>
+            <thead>
+              <tr>
+                <th scope="col"><span class="kp-sr-only">Recurso</span></th>
+                <th scope="col">Essencial</th>
+                <th scope="col" class="is-featured">Profissional</th>
+                <th scope="col">Gestão</th>
+                <th scope="col">Enterprise</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="kp-compare__group"><th colspan="5" scope="colgroup">Centralização e atendimento</th></tr>
+              <tr><th scope="row">Usuários inclusos</th><td>3</td><td class="is-featured">10</td><td>25</td><td>Sob medida</td></tr>
+              <tr><th scope="row">WhatsApp, Instagram, Facebook e e-mail</th><td><span class="kp-yes" aria-label="Incluso">✓</span></td><td class="is-featured"><span class="kp-yes" aria-label="Incluso">✓</span></td><td><span class="kp-yes" aria-label="Incluso">✓</span></td><td><span class="kp-yes" aria-label="Incluso">✓</span></td></tr>
+              <tr><th scope="row">Histórico completo de conversas</th><td><span class="kp-yes" aria-label="Incluso">✓</span></td><td class="is-featured"><span class="kp-yes" aria-label="Incluso">✓</span></td><td><span class="kp-yes" aria-label="Incluso">✓</span></td><td><span class="kp-yes" aria-label="Incluso">✓</span></td></tr>
+              <tr><th scope="row">Respostas rápidas e etiquetas</th><td><span class="kp-no" aria-label="Não incluso">—</span></td><td class="is-featured"><span class="kp-yes" aria-label="Incluso">✓</span></td><td><span class="kp-yes" aria-label="Incluso">✓</span></td><td><span class="kp-yes" aria-label="Incluso">✓</span></td></tr>
+
+              <tr class="kp-compare__group"><th colspan="5" scope="colgroup">CRM e comercial</th></tr>
+              <tr><th scope="row">Funis de vendas</th><td>1</td><td class="is-featured">Ilimitados</td><td>Ilimitados</td><td>Ilimitados</td></tr>
+              <tr><th scope="row">Tarefas e próximas ações</th><td><span class="kp-yes" aria-label="Incluso">✓</span></td><td class="is-featured"><span class="kp-yes" aria-label="Incluso">✓</span></td><td><span class="kp-yes" aria-label="Incluso">✓</span></td><td><span class="kp-yes" aria-label="Incluso">✓</span></td></tr>
+              <tr><th scope="row">Distribuição por responsável</th><td><span class="kp-no" aria-label="Não incluso">—</span></td><td class="is-featured"><span class="kp-yes" aria-label="Incluso">✓</span></td><td><span class="kp-yes" aria-label="Incluso">✓</span></td><td><span class="kp-yes" aria-label="Incluso">✓</span></td></tr>
+              <tr><th scope="row">Automações de fluxo</th><td><span class="kp-no" aria-label="Não incluso">—</span></td><td class="is-featured"><span class="kp-no" aria-label="Não incluso">—</span></td><td><span class="kp-yes" aria-label="Incluso">✓</span></td><td><span class="kp-yes" aria-label="Incluso">✓</span></td></tr>
+
+              <tr class="kp-compare__group"><th colspan="5" scope="colgroup">Painéis e gestão</th></tr>
+              <tr><th scope="row">Painéis de atendimento e vendas</th><td><span class="kp-no" aria-label="Não incluso">—</span></td><td class="is-featured"><span class="kp-yes" aria-label="Incluso">✓</span></td><td><span class="kp-yes" aria-label="Incluso">✓</span></td><td><span class="kp-yes" aria-label="Incluso">✓</span></td></tr>
+              <tr><th scope="row">Resultados por período</th><td><span class="kp-no" aria-label="Não incluso">—</span></td><td class="is-featured"><span class="kp-no" aria-label="Não incluso">—</span></td><td><span class="kp-yes" aria-label="Incluso">✓</span></td><td><span class="kp-yes" aria-label="Incluso">✓</span></td></tr>
+              <tr><th scope="row">Tempo de resposta e pendências</th><td><span class="kp-no" aria-label="Não incluso">—</span></td><td class="is-featured"><span class="kp-no" aria-label="Não incluso">—</span></td><td><span class="kp-yes" aria-label="Incluso">✓</span></td><td><span class="kp-yes" aria-label="Incluso">✓</span></td></tr>
+              <tr><th scope="row">Integrações via API</th><td><span class="kp-no" aria-label="Não incluso">—</span></td><td class="is-featured"><span class="kp-no" aria-label="Não incluso">—</span></td><td><span class="kp-yes" aria-label="Incluso">✓</span></td><td><span class="kp-yes" aria-label="Incluso">✓</span></td></tr>
+
+              <tr class="kp-compare__group"><th colspan="5" scope="colgroup">Processos e suporte</th></tr>
+              <tr><th scope="row">Implantação acompanhada</th><td><span class="kp-yes" aria-label="Incluso">✓</span></td><td class="is-featured"><span class="kp-yes" aria-label="Incluso">✓</span></td><td><span class="kp-yes" aria-label="Incluso">✓</span></td><td><span class="kp-yes" aria-label="Incluso">✓</span></td></tr>
+              <tr><th scope="row">Mapeamento e documentação de processos</th><td><span class="kp-no" aria-label="Não incluso">—</span></td><td class="is-featured"><span class="kp-no" aria-label="Não incluso">—</span></td><td><span class="kp-no" aria-label="Não incluso">—</span></td><td><span class="kp-yes" aria-label="Incluso">✓</span></td></tr>
+              <tr><th scope="row">Gerente de conta dedicado</th><td><span class="kp-no" aria-label="Não incluso">—</span></td><td class="is-featured"><span class="kp-no" aria-label="Não incluso">—</span></td><td><span class="kp-no" aria-label="Não incluso">—</span></td><td><span class="kp-yes" aria-label="Incluso">✓</span></td></tr>
+              <tr><th scope="row">Suporte</th><td>Horário comercial</td><td class="is-featured">Horário comercial</td><td>Prioritário</td><td>Prioritário com SLA</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Adicionais -->
+    <div class="kp-addons">
+      <div>
+        <h3 class="kp-addons__title">Precisa de mais? Adicione ao seu plano.</h3>
+        <p class="kp-addons__lead">Os adicionais podem ser contratados em qualquer plano e entram na mesma fatura.</p>
+      </div>
+      <ul class="kp-addons__list">
+        <li><strong>Usuário extra</strong><span>Para incluir novas pessoas sem trocar de plano.</span></li>
+        <li><strong>Número de WhatsApp extra</strong><span>Mais um número conectado à mesma operação.</span></li>
+        <li><strong>Implementação de processos</strong><span>Mapeamento e documentação das etapas da sua operação.</span></li>
+        <li><strong>Integrações sob medida</strong><span>Conexão com sistemas que a sua empresa já usa.</span></li>
+      </ul>
+    </div>
+
+    <!-- FAQ -->
+    <div class="kp-faq">
+      <h3 class="kp-faq__title">Perguntas frequentes</h3>
+      <div class="kp-faq__list">
+        <details>
+          <summary>Posso trocar de plano depois?</summary>
+          <p>Sim. Você pode subir ou descer de plano a qualquer momento. A diferença é calculada de forma proporcional na próxima fatura.</p>
+        </details>
+        <details>
+          <summary>Como funciona o desconto do plano anual?</summary>
+          <p>No plano anual você tem 20% de desconto em relação ao mensal, com compromisso de 12 meses. O valor exibido é o equivalente mensal.</p>
+        </details>
+        <details>
+          <summary>A implantação está inclusa?</summary>
+          <p>Sim. A equipe Kopla acompanha a configuração inicial dos canais, funis e usuários para que a operação comece organizada.</p>
+        </details>
+        <details>
+          <summary>Quais formas de pagamento são aceitas?</summary>
+          <p>Boleto, Pix e cartão de crédito, com emissão de nota fiscal para o CNPJ da empresa.</p>
+        </details>
+        <details>
+          <summary>Preciso de mais usuários do que o meu plano oferece. E agora?</summary>
+          <p>Você pode contratar usuários extras como adicional, sem trocar de plano. Para equipes maiores, o Enterprise é montado de acordo com a operação.</p>
+        </details>
+      </div>
+    </div>
+
+    <!-- CTA final -->
+    <div class="kp-pricing__cta">
+      <p>Não sabe qual plano escolher?<br>A gente ajuda a entender a sua operação.</p>
+      <div class="kp-pricing__cta-actions">
+        <a class="kp-plan__cta kp-plan__cta--primary" href="https://wa.me/554420181420" target="_blank" rel="noopener">Conversar com a Kopla</a>
+        <a class="kp-pricing__link" href="/#contato">Enviar uma mensagem</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+<script src="pricing.js" defer></script>
+<!-- ============ FIM DA SEÇÃO DE PLANOS ============ -->
+
+</body>
+</html>
